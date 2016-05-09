@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>AplicacionInmobiliaria</display-name>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<filter>
+		<description>generated-persistence-filter</description>
+		<filter-name>orclFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>entityManagerFactoryBeanName</param-name>
+			<param-value>orcl</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<description>generated-sitemesh-filter</description>
+		<filter-name>Sitemesh Filter</filter-name>
+		<filter-class>
+			com.opensymphony.module.sitemesh.filter.PageFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>orclFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Sitemesh Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description>generated-servlet</description>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath:AplicacionInmobiliaria-web-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>generated-resources-servlet</description>
+		<servlet-name>Resource Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.js.resource.ResourceServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectVisitasClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveVisitas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteVisitasPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editOficinasEmpleadoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveClientesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editClientesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listPropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropietariosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>
+			/confirmDeletePropietariosPropiedadeses
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newArriendos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listArriendosClientes</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editArriendosPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/saveEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deleteEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeleteEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newEmpleadosOficinas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listEmpleadosPropiedadeses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listPropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listPropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/deletePropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listPropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropiedadesVisitases</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/selectPropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropiedadesEmpleados</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/confirmDeletePropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/editPropiedades</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/newPropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/listPropiedadesArriendoses</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/savePropiedadesPropietarios</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AplicacionInmobiliaria Servlet</servlet-name>
+		<url-pattern>/indexPropiedades</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
