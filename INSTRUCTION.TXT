@@ -1,0 +1,10 @@
+INSTRUCCIONES
+
+La aplicación está en MyEclipse por lo que se tiene que descargar el programa, abajo se muestra el link de descarga.
+
+La conexión de Oracle está en la dirección localhost, el archivo de la base de datos también se incluye en la carpeta database.
+
+
+
+Link de descarga MyEcplise
+https://www.genuitec.com/products/myeclipse/download/
